@@ -16,12 +16,12 @@ const ShopContextProvider=(props)=>{
     const [cartItems,setCartItems]=useState(getDefaultCart());
 
     useEffect(()=>{
-        fetch('https://voguevista-backend.onrender.com/allproducts')
+        fetch('https://vogue-vista-vercel.onrender.com/allproducts')
         .then((response)=>response.json())
         .then((data)=>setAll_product(data));
 
         if(localStorage.getItem('auth-token')){
-            fetch('https://voguevista-backend.onrender.com/getcart',{
+            fetch('https://vogue-vista-vercel.onrender.com/getcart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -37,7 +37,7 @@ const ShopContextProvider=(props)=>{
     const addToCart =(itemId)=>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}));
         if(localStorage.getItem('auth-token')){
-            fetch('https://voguevista-backend.onrender.com/addtocart',{
+            fetch('https://vogue-vista-vercel.onrender.com/addtocart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -53,7 +53,7 @@ const ShopContextProvider=(props)=>{
     const removeFromCart =(itemId)=>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}));
         if(localStorage.getItem('auth-token')){
-            fetch('https://voguevista-backend.onrender.com/removefromcart',{
+            fetch('https://vogue-vista-vercel.onrender.com/removefromcart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',

@@ -1,7 +1,7 @@
 import React from "react";
 import './CSS/LoginSignup.css'
 import { useState } from "react";
-let apiurl= 'https://voguevista-backend.onrender.com';
+let apiurl= 'https://vogue-vista-vercel.onrender.com';
 
 function LoginSignup() {
 

@@ -9,7 +9,7 @@ const NewCollections = () => {
   const [new_collection,setNew_collection]=useState([]);
 
   useEffect(()=>{
-    fetch('https://voguevista-backend.onrender.com/newcollections')
+    fetch('https://vogue-vista-vercel.onrender.com/newcollections')
     .then((response)=>response.json())
     .then((data)=>setNew_collection(data));
 },[])
